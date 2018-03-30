@@ -13,9 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('login', 'API\UserController@login');
-Route::post('register', 'API\UserController@register');
+// Oauth 2.0
+Route::post('oauth/login', 'API\UserController@login');
+Route::post('oauth/register', 'API\UserController@register');
 
 Route::group(['middleware' => 'auth:api'], function() {
-    Route::post('details', 'API\UserController@details');
+    Route::post('oauth/details', 'API\UserController@details');
+});
+
+// JWT
+Route::post('jwt/login', 'Auth\UserController@login');
+Route::post('jwt/register', 'Auth\UserController@register');
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::post('jwt/details', 'Auth\UserController@details');
 });

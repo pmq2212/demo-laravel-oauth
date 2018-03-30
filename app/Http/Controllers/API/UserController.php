@@ -18,7 +18,7 @@ class UserController extends Controller
 {
 
     /**
-     * login api
+     * Oauth2.0 login api
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -38,7 +38,7 @@ class UserController extends Controller
     }
 
     /**
-     * Register api
+     * Oauth2.0 Register api
      *
      * @return \Illuminate\Http\Response
      */
@@ -65,7 +65,7 @@ class UserController extends Controller
     }
 
     /**
-     * detail user api
+     * Oauth2.0 detail user api
      *
      * @return \Illuminate\Http\JsonResponse
      */
